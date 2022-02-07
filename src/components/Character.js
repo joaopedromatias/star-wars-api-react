@@ -154,7 +154,7 @@ const Characters = () => {
 
 const CharacterBox = ({ name, homeWorld }) => { 
 
-    return <li className="character-name">{name} <br /> <span>HomeWorld: {homeWorld}</span>  </li>
+    return <li className="character-name">{name} <br /> <span>Homeworld: {homeWorld}</span>  </li>
 }
 
 export default Characters;
