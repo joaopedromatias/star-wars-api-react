@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import FilterBox from './FilterBox'
 import Characters from './Character'
 import './FilterBox.css'
 
@@ -61,8 +62,8 @@ const Filter = () => {
     }
 
     return <>
-    <h2 style={{color: '#ffff00', letterSpacing: '1.7px'}}><strong>Star Wars Characters Info</strong></h2>
-    <h4>Click in a movie to search for the characters | See on <a href="">Github </a></h4>
+    <h2 style={{color: '#ffff00', letterSpacing: '1.7px'}}>Star Wars Characters Info</h2>
+    <h4>Click in a movie to search for the characters | See on <a href="https://github.com/joaopedromatias/star-wars-api-react" target='_blank'>Github </a></h4>
     <div className='filter-box-container'>
         {
             films.map((film) => {
@@ -75,13 +76,6 @@ const Filter = () => {
     </div> <br/>
     <Characters/>
     </>
-}
-
-const FilterBox = ({ episode_id, title, boxColor , clickFunction, release_date}) => { 
-    let releaseYear = release_date.split('-')[0];
-    return (
-        <h4 className='filter-box' style={{background: boxColor[episode_id]}} onClick={() => clickFunction(episode_id)}>{title} <br/> <span>{releaseYear}</span></h4> 
-    )
 }
 
 export default Filter;

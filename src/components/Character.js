@@ -1,7 +1,8 @@
 
 import React, { useEffect, useState } from "react";
-import './Character.css';
 import { selectedFilmId, filmsObject } from './Filter';
+import CharacterBox from "./CharacterBox";
+import './CharacterBox.css';
 
 var selectedFilm = '';
 var charactersInfoMemoArray = [];
@@ -150,11 +151,6 @@ const Characters = () => {
                 }
         </ul>
     </>
-}
-
-const CharacterBox = ({ name, homeWorld }) => { 
-
-    return <li className="character-name">{name} <br /> <span>Homeworld: {homeWorld}</span>  </li>
 }
 
 export default Characters;
