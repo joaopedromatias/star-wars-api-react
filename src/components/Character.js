@@ -129,7 +129,7 @@ const Characters = () => {
         return <>
             <div className="loading-container">
                 <div className="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-                <h4>It may take a while, intergalactic internet is still slow... <br/>
+                <h4>It may take a while, intergalactic internet is connecting... <br/>
                     <span className="load-message">Next loads will be much faster</span>
                 </h4>
             </div>
