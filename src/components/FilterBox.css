@@ -13,8 +13,8 @@
     padding: 6px 8px;
 }
 
-.filter-box > span { 
-    font-size: 0.85rem;
+.release-year { 
+  font-size: 0.83rem;
 }
 
 .filter-box:hover { 
@@ -141,6 +141,10 @@ a {
 
   .filter-box { 
     margin: 10px 15px;
+  }
+
+  .filter-box:nth-of-type(1) { 
+    padding-top: 15px;
   }
   
   .lds-roller {
