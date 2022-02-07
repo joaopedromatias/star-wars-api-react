@@ -146,15 +146,19 @@ a {
 
 }
 
+@media screen and (max-width: 600px) {
+
+  .filter-box:nth-of-type(1) { 
+    padding-top: 15px;
+  }
+
+}
+
 @media screen and (max-width: 450px) {
 
   .filter-box { 
     border-radius: 12px;
     margin: 10px 15px;
-  }
-
-  .filter-box:nth-of-type(1) { 
-    padding-top: 15px;
   }
   
   .upper-text { 
@@ -166,4 +170,20 @@ a {
     transform: translateY(300px);
   }
 
+}
+
+@media screen and (max-width: 430px) {
+
+  .filter-box:nth-of-type(3) { 
+    padding-top: 15px;
+  }
+ 
+}
+
+@media screen and (max-width: 370px) {
+
+  .filter-box:nth-of-type(3) { 
+    padding-top: 6px;
+  }
+ 
 }
