@@ -8,9 +8,10 @@
 
 .filter-box { 
     background: black;
-    border-radius: 13.5px;
+    border-radius: 10px;
     color: yellow;
     padding: 6px 8px;
+    border: 1px #494a4b solid;
 }
 
 .release-year { 
@@ -23,6 +24,14 @@
 
 a { 
   color: inherit;
+}
+
+.upper-text { 
+  margin-top: 30px;
+}
+
+.upper-text > span { 
+  font-size: 0.95rem;
 }
 
 .lds-roller {
@@ -140,6 +149,7 @@ a {
 @media screen and (max-width: 450px) {
 
   .filter-box { 
+    border-radius: 12px;
     margin: 10px 15px;
   }
 
@@ -147,6 +157,11 @@ a {
     padding-top: 15px;
   }
   
+  .upper-text { 
+    margin: 30px auto 22px;
+    max-width: 85vw;
+  }
+
   .lds-roller {
     transform: translateY(300px);
   }

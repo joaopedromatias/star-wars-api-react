@@ -40,7 +40,7 @@ const Filter = () => {
 
     useEffect(fetchData, [])
 
-    const selectFilterBox = (id) => {
+    const selectFilterBox = (id,  title) => {
 
         let newOpacity = {[id]: 1}
 
@@ -53,6 +53,12 @@ const Filter = () => {
         
         setOpacity(newOpacity)
         selectedFilmId = id;
+
+        window.dataLayer.push({
+            event: 'event',
+            ec: 'selected-movie', 
+            ea: title
+        })
     }
 
     if (isLoading === true) { 
@@ -70,8 +76,7 @@ const Filter = () => {
     }
 
     return <>
-    <h2 style={{color: '#ffff00', letterSpacing: '1.7px'}}>Star Wars Characters Info</h2>
-    <h4>Click in a movie to search for the characters | See on <a href="https://github.com/joaopedromatias/star-wars-api-react" target='_blank'>Github </a></h4>
+    <h4 className='upper-text'>Click on a movie to search for the characters <br/> <span>See on <a href="https://github.com/joaopedromatias/star-wars-api-react" target='_blank' onClick={() => window.dataLayer.push({event: 'event', ec: 'link', ea: 'gh-link'})}>Github </a></span></h4>
     <div className='filter-box-container'>
         {
             films.map((film) => {
