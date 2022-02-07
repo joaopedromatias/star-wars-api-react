@@ -8,21 +8,21 @@ const filmsUrl = 'https://swapi.dev/api/films'
 var selectedFilmId = '';
 var filmsObject = '';
 
-const defaultBoxColors = {
-    1: '#000000',
-    2: '#000000',
-    3: '#000000',
-    4: '#000000',
-    5: '#000000',
-    6: '#000000'
-}
-
 const Filter = () => {
+
+    const defaultOpacity = {
+        1: 1,
+        2: 1,
+        3: 1,
+        4: 1,
+        5: 1,
+        6: 1
+    }
 
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false)
     const [films, setFilms] = useState([]);
-    const [boxColor, setBoxColor] = useState(defaultBoxColors)
+    const [opacity, setOpacity] = useState(defaultOpacity);
 
     const fetchData = async () => { 
         
@@ -42,8 +42,16 @@ const Filter = () => {
 
     const selectFilterBox = (id) => {
 
-        let newBoxColors = {...defaultBoxColors, [id]: '#7b787d'}
-        setBoxColor(newBoxColors)
+        let newOpacity = {[id]: 1}
+
+        for (let i = 1; i < 7; i++) { 
+
+            if (i !== id) { 
+                newOpacity[i] = 0.3
+            } 
+        }
+        
+        setOpacity(newOpacity)
         selectedFilmId = id;
     }
 
@@ -69,7 +77,7 @@ const Filter = () => {
             films.map((film) => {
                 let { episode_id } = film;
                 return (
-                    <FilterBox key={episode_id} {...film} boxColor={boxColor} clickFunction={selectFilterBox}/>
+                    <FilterBox key={episode_id} {...film} opacity={opacity} clickFunction={selectFilterBox}/>
                 )
             })
         }
